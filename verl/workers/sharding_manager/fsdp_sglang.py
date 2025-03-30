@@ -125,7 +125,7 @@ class FSDPSGLangShardingManager(BaseShardingManager):
             torch.cuda.set_rng_state(self.torch_random_states)
 
     def preprocess_data(self, data: DataProto) -> DataProto:
-        """All gather across tp group to make each rank has identical input."""
+        """test: All gather across tp group to make each rank has identical input."""
         if self.device_mesh["infer_tp"].mesh.size()[0] == 1:
             return data
 
